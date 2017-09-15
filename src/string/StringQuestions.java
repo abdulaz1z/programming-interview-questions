@@ -6,9 +6,9 @@ public class StringQuestions {
 	
 	//1. Find the first non-repeated character in a String
 	public static char firstNonRepeatedChar(String str) {
-		//each char from the string will be stored as the key and a ValObj object will be stored as the value.
-		//this object will how many times a char occur and the index it belong to in the array
-		HashMap<Character, ValObj> map = new HashMap();
+		//each char from the string will be stored as the key and number of time they appear as value.
+		//this object will how many times a char occur
+		HashMap<Character, Integer> map = new HashMap();
 
 		for (int i = 0; i < str.length(); i++){
 			//first char from string
@@ -16,32 +16,30 @@ public class StringQuestions {
 
 			//check if it exist in the map
 			if (map.containsKey(c)){
-				//get the ValObj
-				ValObj valObj = map.get(c);
+				//get the value
+				Integer currOccurrence = map.get(c);
 
-				// now update the valObj and put it back in the map using the same key
-				valObj.numOfOccurrence += 1;
-
-				map.put(c, valObj);
+				// now update and put it back in the map using the same key
+				map.put(c, currOccurrence + 1);
 			}
 			else {
 				//add it to the map
-				map.put(c, new ValObj(1, i));
+				map.put(c, 1);
 			}
 		}
 
-		//now return the first key (char) that has a value (ValObj) and within that value, numOfOccurrence = 1
+		//now return the first key (char) that has a value == 1
 		char firstNonRepeated = '\u0000';
 
 		for (int j = 0; j < str.length(); j++){
 			//first char from string
 			char c = str.charAt(j);
 
-			//get the ValObj using that char
-			ValObj valObj = map.get(c);
+			//get the value using that char
+			Integer totalOccurrence = map.get(c);
 
-			//check if numOfOccurrence == 1
-			if (valObj.numOfOccurrence == 1){
+			//check if totalOccurrence == 1
+			if (totalOccurrence == 1){
 				firstNonRepeated = c;
 			}
 		}
@@ -86,38 +84,17 @@ public class StringQuestions {
 	public static void main(String[] args) {
 
 		//1t
-//		String str = "abcdefghabcdefghi";
-//		System.out.println(firstNonRepeatedChar(str));
-//
-//		String str1 = "aaaaaaaaaaa";
-//		System.out.println(firstNonRepeatedChar(str1));
+		String str = "abcdefghabcdefghi";
+		System.out.println(firstNonRepeatedChar(str));
+
+		String str1 = "aaaaaaaaaaa";
+		System.out.println(firstNonRepeatedChar(str1));
 
 		//2t
-		String str = "java";
-		System.out.println("Iteratively : " + reverseIteratively(str));
-		System.out.println("Recursively : " + reverseRecursively(str));
-		System.out.println("Iteratively : " + reverseIteratively(""));
-		System.out.println("Recursively : " + reverseRecursively(""));
-	}
-	
-	
-	
-	
-	
-
-	
-	private static class ValObj{
-		int numOfOccurrence;
-		int index;
-		
-		public ValObj(int numOfOccurrence, int index){
-			this.numOfOccurrence = numOfOccurrence;
-			this.index = index;
-		}
-
-		@Override
-		public String toString() {
-			return "[" + " numOfOccurrence = " + numOfOccurrence +" index = " + index +  "]";
-		}
+//		String str = "java";
+//		System.out.println("Iteratively : " + reverseIteratively(str));
+//		System.out.println("Recursively : " + reverseRecursively(str));
+//		System.out.println("Iteratively : " + reverseIteratively(""));
+//		System.out.println("Recursively : " + reverseRecursively(""));
 	}
 }
