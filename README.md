@@ -6,7 +6,7 @@ link: https://www.reddit.com/r/cscareerquestions/comments/20ahfq/heres_a_pretty_
 1. Write comments for other people to understand your code easily.
 2. Write your functions in given classes. Create new class if you have to implement any data structure.
 3. Write (Done) next to the problem that you have successfully solved.
-4. Push your code in dev branch then request a merge.
+4. Push your code in dev branch then create a pull request for review.
 5. If you want to add more questions, please add them in the right categories.
 
 
