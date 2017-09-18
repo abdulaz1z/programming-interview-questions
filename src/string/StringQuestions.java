@@ -77,18 +77,16 @@ public class StringQuestions {
 	}
 
 
-
-
 	
 	//Reverse a String iteratively and recursively
 	public static void main(String[] args) {
 
 		//1t
-		String str = "abcdefghabcdefghi";
-		System.out.println(firstNonRepeatedChar(str));
-
-		String str1 = "aaaaaaaaaaa";
-		System.out.println(firstNonRepeatedChar(str1));
+//		String str = "abcdefghabcdefghi";
+//		System.out.println(firstNonRepeatedChar(str));
+//
+//		String str1 = "aaaaaaaaaaa";
+//		System.out.println(firstNonRepeatedChar(str1));
 
 		//2t
 //		String str = "java";
