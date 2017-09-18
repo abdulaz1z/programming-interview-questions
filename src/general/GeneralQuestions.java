@@ -60,14 +60,50 @@ public class GeneralQuestions {
         return pairList;
     }
 
-	public static void main(String[] args) {
+    //3. Given 2 integer arrays, determine of the 2nd array is a rotated version of the 1st array.
+    //Ex. Original Array A={1,2,3,5,6,7,8} Rotated Array B={5,6,7,8,1,2,3}
+    public static boolean isRotated(int[] ori, int[] b){
+        if (ori.length != b.length) return false;
+
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i : ori) {
+            if (map.containsKey(i)){
+                map.put(i, map.get(i) + 1);
+            }
+            else {
+                map.put(i, 1);
+            }
+        }
+
+        for (int j : b) {
+            if (map.containsKey(j)){
+                map.put(j, map.get(j) - 1);
+
+                if (map.get(j) < 0) return false;
+            }
+        }
+        return true;
+    }
+
+
+    public static void main(String[] args) {
       //1t
-      int[] arr = {5,6,7,8,1,2,1,2,3};
-      System.out.println(findMostFrequentInteger(arr));
+//      int[] arr = {5,6,7,8,1,2,1,2,3};
+//      System.out.println(findMostFrequentInteger(arr));
 
       //2t
-      int[] arr2 = {1,2,3,4,6};
-      System.out.println(pairsWhoseSumEqualsToTen(arr2));
+//      int[] arr2 = {1,2,3,4,6};
+//      System.out.println(pairsWhoseSumEqualsToTen(arr2));
+
+        //3t
+//		int[] a ={1,2,3,5,6,7,8};
+//		int[] b ={5,6,7,8,1,2,1};
+//
+//		int[] c ={1,2,3,5,6,7,8};
+//		int[] d ={5,6,7,8,1,2,3};
+//
+//		System.out.println(isRotated(a, b));
+//		System.out.println(isRotated(c, d));
 
 	}
 
