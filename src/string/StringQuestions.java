@@ -62,7 +62,7 @@ public class StringQuestions {
 		return reverse;
 	}
 
-	//iteratively
+	//recursively
 	public static String reverseRecursively(String str){
 		int length = str.length();
 		//base cases
