@@ -16,8 +16,8 @@ link: https://www.reddit.com/r/cscareerquestions/comments/20ahfq/heres_a_pretty_
 3. Given 2 integer arrays, determine of the 2nd array is a rotated version of the 1st array. Ex. Original Array A={1,2,3,5,6,7,8} Rotated Array B={5,6,7,8,1,2,3} (Done:Java)
 4. Write fibbonaci iteratively and recursively (bonus: use dynamic programming) (Done:Python)
 5. Find the only element in an array that only occurs once. (Done:Java)
-6. Find the common elements of 2 int arrays
-7. Implement binary search of a sorted array of integers
+6. Find the common elements of 2 int arrays (Done:Java)
+7. Implement binary search of a sorted array of integers (Done:Java)
 8. Implement binary search in a rotated array (ex. {5,6,7,8,1,2,3})
 9. Use dynamic programming to find the first X prime numbers
 10. Write a function that prints out the binary form of an int
