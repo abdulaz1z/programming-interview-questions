@@ -86,6 +86,39 @@ public class GeneralQuestions {
     }
 
 
+    //5. Find the only element in an array that only occurs once.
+    //this a very vague question so i will return a list of elements that occurs once in the array.
+    //if there is none that occur only one time then i will an empty list
+    public static List<Integer> findOnceOccurredElement(int[] arr){
+        //this map will keep the int element as key and how many times the appear as value
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        //putting all elements in the map and keeping track of how many times each element appear
+        for (Integer i : arr) {
+            if (map.containsKey(i)){
+                int curVal = map.get(i);
+                map.put(i, curVal + 1);
+            }
+            else {
+                map.put(i, 1);
+            }
+        }
+
+        //loop through the arr and find the value from map. if its 1 return this key
+        List<Integer> list = new ArrayList<>();
+        //now for every integer in the arr i am getting the value(number of time it occurred in the arr)
+        //if the value is 1 then add it to the list
+        for (Integer j : arr){
+            int val = map.get(j);
+            if (val == 1){
+                list.add(j);
+            }
+        }
+        return list;
+    }
+
+
+
     public static void main(String[] args) {
       //1t
 //      int[] arr = {5,6,7,8,1,2,1,2,3};
@@ -104,6 +137,16 @@ public class GeneralQuestions {
 //
 //		System.out.println(isRotated(a, b));
 //		System.out.println(isRotated(c, d));
+
+        //5t
+//        int[] a ={1,2,3,1,2,3,5,6,7,3,5,8};
+//        System.out.println(findOnceOccurredElement(a));
+//
+//        int[] b = {1,2,3,4,5,6};
+//        System.out.println(findOnceOccurredElement(b));
+//
+//        int[] c = {};
+//        System.out.println(findOnceOccurredElement(c));
 
 	}
 
