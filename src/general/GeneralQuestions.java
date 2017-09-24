@@ -117,6 +117,54 @@ public class GeneralQuestions {
         return list;
     }
 
+    //6. Find the common elements of 2 int arrays
+    //i will return a list of common elements in both array
+    public static List<Integer> findCommonElements(int[] a, int[] b){
+        //put all elements in array a in a hashset for efficient lookup
+        HashSet<Integer> hashSet = new HashSet<>();
+
+        //add all common elements in this list
+        List<Integer> commonElements = new ArrayList<>();
+
+        if (a.length != 0 && b.length != 0){
+            //add all from array a in hashset
+            for (Integer i : a) {
+                hashSet.add(i);
+            }
+
+            //check for every elements in array b if it exist in hashset. if it does then add it to commonElements
+            for (Integer j : b){
+                if (hashSet.contains(j)){
+                    commonElements.add(j);
+                }
+            }
+        }
+        return commonElements;
+    }
+
+    //7. Implement binary search of a sorted array of integers
+    // i will return true if the element found in the array and false otherwise
+    public static boolean binarySearch(int[] arr, int val) {
+        int start = 0, end  = arr.length - 1;
+
+        while (start <= end) {
+            int middle = (start + end)/2;
+
+            //if the val found in middle of the array return true
+            if (arr[middle] == val)
+                return true;
+
+            //if val is greater than the value in the middle then look in the right
+            if (arr[middle] < val)
+                start = middle + 1;
+
+            //if val is less than the value in the middle then look in the left
+            else{
+                end = middle - 1;
+            }
+        }
+        return false;
+    }
 
 
     public static void main(String[] args) {
@@ -147,6 +195,33 @@ public class GeneralQuestions {
 //
 //        int[] c = {};
 //        System.out.println(findOnceOccurredElement(c));
+
+        //6t
+//        int[] a = {1,2,3,4};
+//        int[] b = {5,6,7,1,2};
+//        System.out.println(findCommonElements(a,b));
+//
+//        int[] c = {5,6,7,1,2};
+//        int[] d = {};
+//        System.out.println(findCommonElements(c,d));
+
+        //7t
+//        int[] a = {1,2,3,4,5,6,7,8,9,10};
+
+        //should be true
+//        System.out.println(binarySearch(a, 1));
+//        System.out.println(binarySearch(a, 2));
+//        System.out.println(binarySearch(a, 3));
+//        System.out.println(binarySearch(a, 4));
+//        System.out.println(binarySearch(a, 5));
+//        System.out.println(binarySearch(a, 6));
+//        System.out.println(binarySearch(a, 7));
+//        System.out.println(binarySearch(a, 8));
+//        System.out.println(binarySearch(a, 9));
+//        System.out.println(binarySearch(a, 10));
+
+        //should ve false
+//        System.out.println(binarySearch(a, 11));
 
 	}
 
