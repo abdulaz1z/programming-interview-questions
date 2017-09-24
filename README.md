@@ -6,14 +6,14 @@ link: https://www.reddit.com/r/cscareerquestions/comments/20ahfq/heres_a_pretty_
 1. Write comments for other people to understand your code easily.
 2. Write your functions in given classes. Create new class if you have to implement any data structure.
 3. Write (Done) next to the problem that you have successfully solved.
-4. Push your code in dev branch then request a merge.
+4. Push your code in dev branch then create a pull request for review.
 5. If you want to add more questions, please add them in the right categories.
 
 
 ## General
-1. Find the most frequent integer in an array (Done)
-2. Find pairs in an integer array whose sum is equal to 10 (bonus: do it in linear time) (Done)
-3. Given 2 integer arrays, determine of the 2nd array is a rotated version of the 1st array. Ex. Original Array A={1,2,3,5,6,7,8} Rotated Array B={5,6,7,8,1,2,3} (Done)
+1. Find the most frequent integer in an array (Done:Java, Python)
+2. Find pairs in an integer array whose sum is equal to 10 (bonus: do it in linear time) (Done:Java, Python)
+3. Given 2 integer arrays, determine of the 2nd array is a rotated version of the 1st array. Ex. Original Array A={1,2,3,5,6,7,8} Rotated Array B={5,6,7,8,1,2,3} (Done:Java)
 4. Write fibbonaci iteratively and recursively (bonus: use dynamic programming)
 5. Find the only element in an array that only occurs once. (Done)
 6. Find the common elements of 2 int arrays
@@ -29,8 +29,8 @@ link: https://www.reddit.com/r/cscareerquestions/comments/20ahfq/heres_a_pretty_
 16. HARD: Given a 2D array of 1s and 0s, count the number of "islands of 1s" (e.g. groups of connecting 1s)
 
 ## Strings
-1. Find the first non-repeated character in a String (Done)
-2. Reverse a String iteratively and recursively (Done)
+1. Find the first non-repeated character in a String (Done:Java)
+2. Reverse a String iteratively and recursively (Done:Java)
 3. Determine if 2 Strings are anagrams
 4. Check if String is a palindrome
 5. Check if a String is composed of all unique characters
