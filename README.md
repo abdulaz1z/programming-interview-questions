@@ -55,7 +55,7 @@ link: https://www.reddit.com/r/cscareerquestions/comments/20ahfq/heres_a_pretty_
 13. HARD: Construct a BST given the pre-order and in-order traversal Strings
 
 ## Stacks
-1. Implement a stack with push and pop functions
+1. Implement a stack with push and pop functions (Done:Java)
 2. Find the minimum element in a stack in O(1) time
 3. Write a function that sorts a stack (bonus: sort the stack in place without extra memory)
 
