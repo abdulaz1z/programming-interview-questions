@@ -17,11 +17,16 @@ public class StackImpl<T> {
         data[top] = element;
     }
 
-    //this will return the top element
+    //this will delete and return the top element
     public T pop(){
         T temp = data[top];
         top--;
         return temp;
+    }
+
+    //this will return the top element
+    public T peek(){
+        return data[top];
     }
 
     //this checks if the stack is empty
