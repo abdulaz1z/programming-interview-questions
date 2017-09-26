@@ -11,13 +11,13 @@ link: https://www.reddit.com/r/cscareerquestions/comments/20ahfq/heres_a_pretty_
 
 
 ## General
-1. Find the most frequent integer in an array (Done:Java, Python)
-2. Find pairs in an integer array whose sum is equal to 10 (bonus: do it in linear time) (Done:Java, Python)
-3. Given 2 integer arrays, determine of the 2nd array is a rotated version of the 1st array. Ex. Original Array A={1,2,3,5,6,7,8} Rotated Array B={5,6,7,8,1,2,3} (Done:Java)
-4. Write fibbonaci iteratively and recursively (bonus: use dynamic programming) (Done:Python)
-5. Find the only element in an array that only occurs once. (Done:Java)
-6. Find the common elements of 2 int arrays (Done:Java)
-7. Implement binary search of a sorted array of integers (Done:Java)
+1. Find the most frequent integer in an array (Done:Java, Python) ✅
+2. Find pairs in an integer array whose sum is equal to 10 (bonus: do it in linear time) (Done:Java, Python) ✅
+3. Given 2 integer arrays, determine of the 2nd array is a rotated version of the 1st array. Ex. Original Array A={1,2,3,5,6,7,8} Rotated Array B={5,6,7,8,1,2,3} (Done:Java) ✅
+4. Write fibbonaci iteratively and recursively (bonus: use dynamic programming) (Done:Python) ✅
+5. Find the only element in an array that only occurs once. (Done:Java) ✅
+6. Find the common elements of 2 int arrays (Done:Java) ✅
+7. Implement binary search of a sorted array of integers (Done:Java) ✅
 8. Implement binary search in a rotated array (ex. {5,6,7,8,1,2,3})
 9. Use dynamic programming to find the first X prime numbers
 10. Write a function that prints out the binary form of an int
@@ -29,10 +29,10 @@ link: https://www.reddit.com/r/cscareerquestions/comments/20ahfq/heres_a_pretty_
 16. HARD: Given a 2D array of 1s and 0s, count the number of "islands of 1s" (e.g. groups of connecting 1s)
 
 ## Strings
-1. Find the first non-repeated character in a String (Done:Java)
-2. Reverse a String iteratively and recursively (Done:Java)
-3. Determine if 2 Strings are anagrams(Done:Pyhton)
-4. Check if String is a palindrome (Done:Pyhton)
+1. Find the first non-repeated character in a String (Done:Java) ✅
+2. Reverse a String iteratively and recursively (Done:Java) ✅
+3. Determine if 2 Strings are anagrams(Done:Pyhton) ✅
+4. Check if String is a palindrome (Done:Pyhton) ✅
 5. Check if a String is composed of all unique characters
 6. Determine if a String is an int or a double
 7. HARD: Find the shortest palindrome in a String
@@ -55,8 +55,8 @@ link: https://www.reddit.com/r/cscareerquestions/comments/20ahfq/heres_a_pretty_
 13. HARD: Construct a BST given the pre-order and in-order traversal Strings
 
 ## Stacks
-1. Implement a stack with push and pop functions (Done:Java)
-2. Find the minimum element in a stack in O(1) time
+1. Implement a stack with push and pop functions (Done:Java) ✅
+2. Find the minimum element in a stack in O(1) time (http://bit.ly/2hwtynw) (Done:Java) ✅ 
 3. Write a function that sorts a stack (bonus: sort the stack in place without extra memory)
 
 ## Queues
