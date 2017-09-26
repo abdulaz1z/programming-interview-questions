@@ -56,7 +56,7 @@ link: https://www.reddit.com/r/cscareerquestions/comments/20ahfq/heres_a_pretty_
 
 ## Stacks
 1. Implement a stack with push and pop functions (Done:Java) ✅
-2. Find the minimum element in a stack in O(1) time (http://bit.ly/2hwtynw)(Done:Java) ✅ 
+2. Find the minimum element in a stack in O(1) time (http://bit.ly/2hwtynw) (Done:Java) ✅ 
 3. Write a function that sorts a stack (bonus: sort the stack in place without extra memory)
 
 ## Queues
