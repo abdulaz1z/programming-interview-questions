@@ -1,7 +1,27 @@
 """
 Numbers to words.py
-Description: given a number write it out in words
+Author: Raymond Perez (github.com/Raymond-P)
+Description: given a number write it out in words. Only supports natural numbers (positive ints).
 
+Logic:
+Our number system in english has a few general rules* when it comes to naming a number.
+1- unique names:
+    -numbers 0-19
+    -decimals: 20,30,40,50,60,70,80 and 90
+    
+2- zero '0' is silent:
+    -not mentioned, unless it's by itself
+    
+3- hundreds are almost the same as units:
+    -a number in the hundred category is the name of the unit plus 'hundred'. ex: 900 nine hundred
+    
+4- group numbers in 3 digit groups:
+    -the previous rules apply to numbers inside groups of 3 digits
+    -we classify these 3 digit groups with the power of 10 associated with the rightmost (lowest) digit
+    -these powers of 10 have unique names: none, thousand, million, billion, trillion, quadrillion
+    -we name them using the previous rules and it's respective power of 10
+     
+*these rules could get more technical but these are good enough for our purposes
 """
 from math import ceil
 
@@ -31,7 +51,7 @@ decimals = {
     0: "",
     2: "twenty",
     3: "thirty",
-    4: "fourty",
+    4: "forty",
     5: "fifty",
     6: "sixty",
     7: "seventy",
@@ -66,14 +86,18 @@ def eval_group_of_3(group):  # a number group of 3 ex: "123"
 
 
 def translate_number(number):
-    input_str = str(number)
-    padding = ""
+    if len(str(number)) > 24:                    # check if the number is supported
+        return "ERROR Number too big to translate for now."
+    if number == 0:                              # unique case 'zero'
+        return "zero"
+    input_str = str(number)                      # parse number to string because we will use te string indexing feature
+    padding = ""                                 # we add padding to a sure the len of input_str is a multiple of 3
     for i in range(3 - (len(input_str)%3)):
         padding += "0"
     input_str = padding + input_str
-    num_of_groups = ceil(len(input_str)/3)
-    output = ""
-    while num_of_groups > 0:
+    num_of_groups = ceil(len(input_str)/3)       # we calculate how many groups of 3 digits are in the number that way
+    output = ""                                  # ^we know what level:"thousand", "million" the groups classify in
+    while num_of_groups > 0:                     # ^and use this number as a key in our group_of_3_lvl dict
         current_translation = eval_group_of_3(input_str[0:3])
         if len(current_translation) != 0:
             current_translation += " " + group_of_3_lvl[num_of_groups]
@@ -84,7 +108,5 @@ def translate_number(number):
 
 
 if __name__ == '__main__':
-    print(eval_group_of_3("123"))
-    # print(eval_group_of_3("000"))
-    # print(eval_group_of_3("23")) # fix bug
-    print(translate_number(122347273000000))
+    print(translate_number(122347273013120000000000))
+    print(translate_number(000))
