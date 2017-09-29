@@ -32,7 +32,7 @@ link: https://www.reddit.com/r/cscareerquestions/comments/20ahfq/heres_a_pretty_
 ## Strings
 1. Find the first non-repeated character in a String (Done:Java) ✅
 2. Reverse a String iteratively and recursively (Done:Java) ✅
-3. Determine if 2 Strings are anagrams(Done:Pyhton) ✅
+3. Determine if 2 Strings are anagrams(Done:Java, Pyhton) ✅
 4. Check if String is a palindrome (Done:Pyhton) ✅
 5. Check if a String is composed of all unique characters
 6. Determine if a String is an int or a double

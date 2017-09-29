@@ -49,7 +49,6 @@ public class StringQuestions {
 	}
 
 	//2. Reverse a String iteratively and recursively
-
 	//iteratively
 	public static String reverseIteratively(String str){
 		if (str.length() == 0) return "";
@@ -76,9 +75,61 @@ public class StringQuestions {
 		}
 	}
 
+	//3. Determine if 2 Strings are anagrams
+	//Anagram means a word, phrase, or name formed by rearranging the letters of another, such as cinema, formed from iceman.
+	//it will return true for anagram and false otherwise
+	//assuming two empty strings are anagram
+	public static boolean isAnagram(String a, String b){
+		if (a.length() != b.length()) return false;
+		//this map will keep count of how many times each char appear in the string
+		HashMap<Character, Integer> map = new HashMap<>();
 
-	
-	//Reverse a String iteratively and recursively
+		//this loop is to count how many times char in a appears
+		for (int i = 0; i < a.length(); i++) {
+			//getting the first char
+			char c = a.charAt(i);
+
+			//checking if it already appeared, if it did, incrementing by 1
+			if (map.containsKey(c)){
+				int value = map.get(c);
+				map.put(c, value + 1);
+			}
+			else {
+				//just add it to the map because it's the first time it appeared
+				map.put(c, 1);
+			}
+		}
+
+		//this loop is to see how many times char in b appears
+		for (int j = 0; j < b.length(); j++) {
+			//getting the first char
+			char c = b.charAt(j);
+
+			//checking if it exist in map, if it does, decrementing by 1
+			if (map.containsKey(c)){
+				int value = map.get(c);
+				map.put(c, value - 1);
+			}
+			else {
+				//return false because if the char does not exist in map then it cant be anagram
+				//anagram has same char just rearranged
+				return false;
+			}
+		}
+
+		//now check for all char in string a, the value must be 0 for it to be an anagram
+		for (int k = 0; k < a.length(); k++) {
+			char c = a.charAt(k);
+			int val = map.get(c);
+
+			if (val != 0){
+				return false;
+			}
+		}
+		return true;
+	}
+
+
 	public static void main(String[] args) {
 
 		//1t
@@ -94,5 +145,19 @@ public class StringQuestions {
 //		System.out.println("Recursively : " + reverseRecursively(str));
 //		System.out.println("Iteratively : " + reverseIteratively(""));
 //		System.out.println("Recursively : " + reverseRecursively(""));
+
+		//3t
+//		String a = "cinema";
+//		String b = "iceman";
+//		System.out.println(isAnagram(a, b));
+//
+//		String c = "cin";
+//		String d = "nim";
+//		System.out.println(isAnagram(c, d));
+//
+//		String e = "";
+//		String f = "";
+//		System.out.println(isAnagram(e, f));
+
 	}
 }
