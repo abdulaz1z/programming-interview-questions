@@ -12,7 +12,7 @@ public class SortingQuestions {
         //it loops through again from first element to the last element and for each iteration
         //it checks if the adjacent elements are in wrong order and if they are then swapping them to correct the order
         for (int i = 0; i< length; i++){
-            for (int j = 0; j< length - 1; j++){
+            for (int j = 0; j< length - i - 1; j++){
                 if (arr[j] > arr[j + 1]){
                     //swapping the elements here
                     int temp = arr[j + 1];
