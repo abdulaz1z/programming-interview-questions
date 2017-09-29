@@ -27,6 +27,7 @@ link: https://www.reddit.com/r/cscareerquestions/comments/20ahfq/heres_a_pretty_
 14. Write a multiply function that multiples 2 integers without using *
 15. HARD: Given a function rand5() that returns a random int between 0 and 5, implement rand7()
 16. HARD: Given a 2D array of 1s and 0s, count the number of "islands of 1s" (e.g. groups of connecting 1s)
+17. HARD: Given a number, print it out in words. (Done:Python)✅
 
 ## Strings
 1. Find the first non-repeated character in a String (Done:Java) ✅
@@ -38,6 +39,7 @@ link: https://www.reddit.com/r/cscareerquestions/comments/20ahfq/heres_a_pretty_
 7. HARD: Find the shortest palindrome in a String
 8. HARD: Print all permutations of a String
 9. HARD: Given a single-line text String and a maximum width value, write the function 'String justify(String text, int maxWidth)' that formats the input text using full-justification, i.e., extra spaces on each line are equally distributed between the words; the first word on each line is flushed left and the last word on each line is flushed right
+10. HARD: Given a string encrypt it using a self-generating one time pad 
 
 ## Trees
 1. Implement a BST with insert and delete functions
