@@ -18,6 +18,7 @@ Our number system in english has a few general rules* when it comes to naming a 
 4- group numbers in 3 digit groups:
     -the previous rules apply to numbers inside groups of 3 digits
     -we classify these 3 digit groups with the power of 10 associated with the rightmost (lowest) digit
+        -we usually see this as the commas that separate the number in groups of 3
     -these powers of 10 have unique names: none, thousand, million, billion, trillion, quadrillion
     -we name them using the previous rules and it's respective power of 10
      
@@ -59,6 +60,9 @@ decimals = {
     9: "ninety"
 }
 
+# Think of this dictionary as the commas in a number.
+# ex: 500,200,200
+# five hundred ('million') two hundred ('thousand') two hundred ('')
 group_of_3_lvl = {
     1: "",  # 0-999
     2: "thousand ",  # 1000-9999
@@ -72,38 +76,69 @@ group_of_3_lvl = {
 }
 
 
-def eval_group_of_3(group):  # a number group of 3 ex: "123"
+def eval_group_of_3(number_str):  # a number group of 3 ex: "123"
+    """
+    translates a 3 digit number to words
+    :param number_str: the string of the number to evaluate. ex: "123"
+    :return: a string with the verbal representation of the number. 
+        ex: "123" -> "one hundred twenty three"
+    """
     output = ""
-    if group[0] > "0":
-        output += units[int(group[0])] + " hundred "
-    if group[1:] < "20":  # less than 20
-        output += units[int(group[1:])]
-        return output
+    if number_str[0] > "0":
+        output += units[int(number_str[0])] + " hundred "
+    if number_str[1:] < "20":  # check if decimal less than 20 ex: 312 -> 12 < 20? true
+        output += units[int(number_str[1:])]  # look for the decimal in the units dictionary
+        return output  # we evaluated all 3 digits
     else:
-        output += decimals[int(group[1])]+" "
-        output += units[int(group[2])]
+        output += decimals[int(number_str[1])] + " "  # get the decimal name
+        output += units[int(number_str[2])]           # get the unit name
         return output
+
+
+def add_padding(string):
+    """
+    Adds padding to the string as 0's to ensure that the 
+    length of the string is a multiple of 3
+    :param string: the number string to be padded
+    ex: 12,345 -> 012,345
+    """
+    padding = ""
+    for i in range(3 - (len(string) % 3)):
+        padding += "0"
+    return padding + string
 
 
 def translate_number(number):
-    if len(str(number)) > 24:                    # check if the number is supported
+    # parse number to string because we will use the string indexing feature
+    input_str = str(number)
+    if not input_str.isnumeric():         # check if it is a number
+        return "Input Error: argument passed in is not a number"
+    if len(str(number)) > 24:             # check if the number is supported
         return "ERROR Number too big to translate for now."
-    if number == 0:                              # unique case 'zero'
+    if number == 0:                       # unique case 'zero'
         return "zero"
-    input_str = str(number)                      # parse number to string because we will use te string indexing feature
-    padding = ""                                 # we add padding to a sure the len of input_str is a multiple of 3
-    for i in range(3 - (len(input_str)%3)):
-        padding += "0"
-    input_str = padding + input_str
-    num_of_groups = ceil(len(input_str)/3)       # we calculate how many groups of 3 digits are in the number that way
-    output = ""                                  # ^we know what level:"thousand", "million" the groups classify in
-    while num_of_groups > 0:                     # ^and use this number as a key in our group_of_3_lvl dict
+
+
+    input_str = add_padding(input_str)  # add padding to the string
+
+    # we evaluate numbers in groups of 3 therefore find out
+    # how many groups of 3 there are
+    num_of_groups = ceil(len(input_str)/3)  # we also use this to keep track of the group lvl
+
+    output = ""  # keep track of the string we are going to return
+    while num_of_groups > 0:
+        # keep track of what the current group of 3 translates to
         current_translation = eval_group_of_3(input_str[0:3])
+
+        # make sure we don't add a lvl to an empty translation
+        # ex: 30,000,000 -> thirty million
+        # not thirty million thousand
         if len(current_translation) != 0:
             current_translation += " " + group_of_3_lvl[num_of_groups]
-        output = output + current_translation
-        num_of_groups -= 1
-        input_str = input_str[3:]
+
+        output = output + current_translation  # add current translation to output
+        num_of_groups -= 1  # decrement the group level
+        input_str = input_str[3:]  # delete the first group of 3 from the number string
     return output
 
 
