@@ -40,7 +40,7 @@ link: https://www.reddit.com/r/cscareerquestions/comments/20ahfq/heres_a_pretty_
 9. HARD: Given a single-line text String and a maximum width value, write the function 'String justify(String text, int maxWidth)' that formats the input text using full-justification, i.e., extra spaces on each line are equally distributed between the words; the first word on each line is flushed left and the last word on each line is flushed right
 
 ## Trees
-1. Implement a BST with insert and delete functions
+1. Implement a BST with insert and delete functions (Done:Python) ✅
 2. Print a tree using BFS and DFS
 3. Write a function that determines if a tree is a BST
 4. Find the smallest element in a BST
