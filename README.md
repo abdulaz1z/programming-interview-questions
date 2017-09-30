@@ -63,7 +63,7 @@ link: https://www.reddit.com/r/cscareerquestions/comments/20ahfq/heres_a_pretty_
 
 ## Queues
 1. Implement a queue with queue and dequeue functions
-2. HARD: Implement a queue using 2 stacks  (Done:Pyhton) :white_check_mark:
+2. HARD: Implement a queue using 2 stacks  (Done:Pyhton) ✅
 
 ## Heaps
 Implement a binary min heap. Turn it into a binary max heap

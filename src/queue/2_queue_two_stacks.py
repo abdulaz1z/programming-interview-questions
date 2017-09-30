@@ -1,4 +1,9 @@
 class QueueTwoStacks(object):
+    """
+    A queue implemented using two stacks.
+
+    https://stackoverflow.com/questions/69192/how-to-implement-a-queue-using-two-stacks
+    """
     def __init__(self):
         self.inbox = []  # a stack
         self.outbox = []  # another stack
@@ -30,6 +35,3 @@ if __name__ == "__main__":
 
     queue.enqueue("Github")
     print(queue.dequeue())
-    
-
-
