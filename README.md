@@ -79,7 +79,7 @@ Implement a binary min heap. Turn it into a binary max heap
 
 ## Sorting
 1. Implement bubble sort (Done:Java) ✅
-2. Implement selection sort
+2. Implement selection sort (Done:Java) ✅
 3. Implement insertion sort
 4. Implement merge sort
 5. Implement quick sort
