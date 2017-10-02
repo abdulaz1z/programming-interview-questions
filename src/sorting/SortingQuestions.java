@@ -43,12 +43,11 @@ public class SortingQuestions {
                     //updating with the next minimum value index
                     indexOfMinElement = j;
                 }
-
-                //swapping the current minimum to be in the sorted portion of the array
-                temp = arr[i];
-                arr[i] = arr[indexOfMinElement];
-                arr[indexOfMinElement] = temp;
             }
+            //swapping the current minimum to be in the sorted portion of the array
+            temp = arr[i];
+            arr[i] = arr[indexOfMinElement];
+            arr[indexOfMinElement] = temp;
         }
         return arr;
     }
