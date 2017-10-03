@@ -42,7 +42,7 @@ link: https://www.reddit.com/r/cscareerquestions/comments/20ahfq/heres_a_pretty_
 10. HARD: Given a string encrypt it using a self-generating one time pad 
 
 ## Trees
-1. Implement a BST with insert and delete functions
+1. Implement a BST with insert and delete functions (Done:Python) ✅
 2. Print a tree using BFS and DFS
 3. Write a function that determines if a tree is a BST
 4. Find the smallest element in a BST
