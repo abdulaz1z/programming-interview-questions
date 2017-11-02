@@ -7,6 +7,7 @@ public class SortingQuestions {
     //1. Implement bubble sort O(n^2)
     public static int[] bubbleSort(int[] arr){
         int length = arr.length;    //size of the array
+        boolean swapped = false;
 
         //looping through all elements in the array arr and for each iteration
         //it loops through again from first element to the last element and for each iteration
@@ -18,7 +19,13 @@ public class SortingQuestions {
                     int temp = arr[j + 1];
                     arr[j + 1] = arr[j];
                     arr[j] = temp;
+                    swapped = true;
                 }
+            }
+
+            if (swapped == false){
+                //the array is already sorted
+                break;
             }
         }
 
